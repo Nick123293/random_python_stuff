@@ -1,8 +1,7 @@
-#!/usr/bin/bash
+
+"""Mathparse automatically resolves expressions, allowing for the input of arbitrary expressions into python elements"""
 
 import numpy as np
-import argparse
-import ast
 from mathparse import mathparse
 
 def get_matrix(i: int):
