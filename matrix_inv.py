@@ -5,8 +5,6 @@ Mathparse automatically resolves expressions, allowing for the input of arbitrar
   """
 
 import numpy as np
-import argparse
-import sys
 from mathparse import mathparse
 
 def get_matrix():
@@ -19,9 +17,6 @@ def get_matrix():
 
 
 def main():
-  parser=argparse.ArgumentParser(description="Usage: python3 matrix_mult.py [--force_dims]: optional")
-  parser.add_argument("--force-dims", action='store_true' ,help="If given, forces dimensions to allow matrix multiplication")
-  args = parser.parse_args()
   matrix = (get_matrix())
   inv=np.linalg.inv(matrix)
   print(inv)
