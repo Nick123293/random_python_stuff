@@ -8,6 +8,10 @@ import numpy as np
 import argparse
 import sys
 from mathparse import mathparse
+import re
+
+def sanitize_input(input: str):
+  return re.sub(r'(?<!\d)\.(\d+)', r'0.\1', input) #add a 0 to the beginning of the string it it starts with a . (or has letters before the .)
 
 def get_matrix(i: int):
   m = int(input(f"How many rows in matrix {i} "))
@@ -15,7 +19,7 @@ def get_matrix(i: int):
   arr=np.zeros((m, n))
   for x in range(m):
     for y in range(n):
-      arr[x,y]=mathparse.parse(input(f"Input val {x},{y} "))
+      arr[x,y]=mathparse.parse(sanitize_input(input(f"Input val {x},{y} "))) #Take input, sanitize it, then parse with mathparse
   return arr
 
 def ensure_dims(matrices: list[np.ndarray], i: int):
