@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Mathparse automatically resolves expressions, allowing for the input of arbitrary expressions into python elements.
+"""
+Multiplies an arbitrary number of matrices together, using input order as order of operations.
+Mathparse automatically resolves expressions, allowing for the input of arbitrary expressions into python elements.
 
 --force-dims manually checks the matrix dimensions to make sure the multiplication is valid. numpy also does this, but using --force-dims gives 
 a cleaner error."""
